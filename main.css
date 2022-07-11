@@ -24,6 +24,7 @@ h1 {
     padding: 5px;
     border: 2px solid;
     transition: 0.1s;
+    color: white;
 }
 
 #new {
@@ -44,7 +45,11 @@ h1 {
     background-color: rgb(199, 70, 70);
 }
 
-.disabled {
+#new.disabled {
+    color: grey;
+}
+
+#giveUp.disabled {
     color: grey;
 }
 
