@@ -1,0 +1,98 @@
+/* Your code here */
+body {
+    background-color: black;
+}
+
+h1 {
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 5vh;
+    font-size: 50px;
+    transition: 0.5s;
+    color: white
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5vh;
+}
+
+#new, #giveUp {
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 5px;
+    border: 2px solid;
+    transition: 0.1s;
+}
+
+#new {
+    background-color: rgb(20, 170, 60);
+    border-color: rgb(63, 146, 85);
+}
+
+#new:hover {
+    background-color: rgb(63, 146, 85);
+}
+
+#giveUp {
+    background-color: rgb(248, 68, 68);
+    border-color: rgb(199, 70, 70);
+}
+
+#giveUp:hover {
+    background-color: rgb(199, 70, 70);
+}
+
+.disabled {
+    color: grey;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 70vh;
+    width: 70vw;
+    margin: auto;
+}
+
+.middle {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.left {
+    border-right: 2px solid white;
+}
+
+.right {
+    border-left: 2px solid white;
+}
+
+#board > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    color: black;
+    font-size: small;
+}
+
+.x, .o {
+    height: 18vh;
+    width: 14vw;
+}
+
+@media screen and (max-width: 650px) {
+    #board {
+        width: 90vw;
+    }
+
+    .x, .o {
+        height: 20vh;
+        width: 23vw;
+    }
+}
