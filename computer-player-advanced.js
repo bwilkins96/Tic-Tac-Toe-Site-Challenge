@@ -95,12 +95,22 @@ export default class ComputerPlayer {
     else {return false}
   }
 
+  static middleTrick2(grid) {
+    if (grid[1][0] === "X" && grid[2][1] === "X" && grid[2][0] === null) {return {row: 2, col: 0}}
+    if (grid[0][1] === "X" && grid[1][2] === "X" && grid[0][2] === null) {return {row: 0, col: 2}}
+    if (grid[0][1] === "X" && grid[1][0] === "X" && grid[0][0] === null) {return {row: 0, col: 0}}
+    if (grid[1][2] === "X" && grid[2][1] === "X" && grid[2][2] === null) {return {row: 2, col: 2}}
+
+    return false;
+  }
+
 //
 
   static randomMove(grid) {
     let validMoves;
     if (ComputerPlayer.cornerTrick(grid)) {validMoves = ComputerPlayer.getValidMiddles(grid)}
     else if(ComputerPlayer.middleTrick(grid)) {validMoves = ComputerPlayer.getValidCorners(grid)}
+    else if(ComputerPlayer.middleTrick2(grid)) {validMoves = [ComputerPlayer.middleTrick2(grid)]}
     else {validMoves = ComputerPlayer.getValidMoves(grid)}
 
     if (grid[1][1] === null) {return {row: 1, col:1}}
